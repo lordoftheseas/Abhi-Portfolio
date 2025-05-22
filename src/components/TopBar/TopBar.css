@@ -1,0 +1,10 @@
+.MuiMenu-paper {
+  background-color: rgba(18, 18, 18, 0.8) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Extra styles for menu items if needed */
+.MuiMenuItem-root:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
