@@ -3,10 +3,10 @@ import TopBar from "./components/TopBar/TopBar.jsx";
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { StyledEngineProvider } from "@mui/material/styles";
-import HeroSection from "./components/HeroSection/HeroSection.jsx";
-import ProjectsSection from "./components/Projects/ProjectsSection.jsx";
-import AboutSection from "./components/AboutSection/AboutSection.jsx";
-import EmailSection from "./components/EmailSection/EmailSection.jsx";
+import HeroSection from "./components/HeroSection/HeroSection";
+import ProjectsSection from "./components/Projects/ProjectsSection";
+import AboutSection from "./components/AboutSection/AboutSection";
+import EmailSection from "./components/EmailSection/EmailSection";
 import Footer from "./components/Footer/Footer.jsx";
 import { Toolbar } from "@mui/material";
 
