@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import {
-  Typography,
-  Box,
-  Container,
-  TextField,
-  Button,
-  Paper,
-  Grid,
-} from "@mui/material";
+import TextField from "@mui/material/TextField";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 import SendIcon from "@mui/icons-material/Send";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";

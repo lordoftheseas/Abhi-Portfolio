@@ -1,25 +1,23 @@
 import React, { useState } from "react";
-import {
-  Typography,
-  Box,
-  Container,
-  Grid,
-  Paper,
-  SwipeableDrawer,
-  Card,
-  CardContent,
-  Divider,
-  List,
-  ListItem,
-  useTheme,
-  Chip,
-  Modal,
-  Fade,
-  IconButton,
-  ListItemText,
-  Button, // Add this if not already imported
-  Avatar, // Add this import
-} from "@mui/material";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Divider from "@mui/material/Divider";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import { useTheme } from "@mui/material/styles";
+import Chip from "@mui/material/Chip";
+import Modal from "@mui/material/Modal";
+import Fade from "@mui/material/Fade";
+import IconButton from "@mui/material/IconButton";
+import ListItemText from "@mui/material/ListItemText";
+import Button from "@mui/material/Button";
+import Avatar from "@mui/material/Avatar";
 import { Global } from "@emotion/react";
 import { styled } from "@mui/material/styles";
 import CodeIcon from "@mui/icons-material/Code";
