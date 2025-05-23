@@ -18,6 +18,7 @@ import {
   IconButton,
   ListItemText,
   Button, // Add this if not already imported
+  Avatar, // Add this import
 } from "@mui/material";
 import { Global } from "@emotion/react";
 import { styled } from "@mui/material/styles";
@@ -59,13 +60,25 @@ const skillsData = {
     "C++",
     "Go",
     "Shell Scripting",
-    "Scala",
     "Java",
     "JavaScript",
     "React",
     "HTML",
-    "CSS",
+    "PHP",
+    "LaTeX",
+    "MIPS Assembly",
+    "VHDL",
   ],
+
+  Frameworks: ["React", "Node.js", "Next.js", "Flask", "Material-UI"],
+
+  OS: [
+    "Linux (Kali, RedHat, Fedora)",
+    "MacOS",
+    "Windows (Server and Client)",
+    "Ubuntu (Server and Client)",
+  ],
+
   Cybersecurity: [
     "Vulnerability Research",
     "NIST standards",
@@ -76,40 +89,44 @@ const skillsData = {
   ],
   "Red Team Tools": [
     "Kali Linux",
-    "Parrot Security OS",
-    "Cobalt Strike",
-    "BloodHound",
-    "Mimikatz",
-    "Empire",
     "Metasploit Framework",
     "Burp Suite Pro",
     "Sqlmap",
     "Hashcat",
+    "Nmap",
+    "Wireshark",
+    "JohnTheRipper",
+    "Metasploit",
+    "OpenSSL",
+    "pfSense",
+    "Apache2",
+    "Ghidra",
   ],
   "Developer Tools": [
     "VS Code",
-    "Eclipse",
+    "Emacs",
     "Google Cloud Platform",
     "Android Studio",
     "Node.js",
     "GitHub",
     "JUnit",
     "WordPress",
-    "VMware ESXi",
     "PostgreSQL",
     "Firebase",
-    "NoSQL databases",
   ],
   Software: [
-    "VS Code",
     "Visual Studio",
-    "Postman",
     "IntelliJ",
-    "Snowflake",
     "vSphere",
     "Content Management System (CMS)",
-    "Qualys",
     "CrowdStrike",
+    "Jupyter Notebook",
+    "Figma",
+    "Git",
+    "Expo Go",
+    "Xpra",
+    "Docker",
+    "PyCharm",
   ],
   "Security Tools": [
     "Nmap",
@@ -128,23 +145,21 @@ const skillsData = {
     "IDS/IPS",
     "FTP",
     "HTTP",
-    "VOIP",
     "TCP/IP Suite",
     "SSL/TLS encryption",
     "Active Directory",
   ],
-  "Cloud Platform": ["AWS", "Azure"],
+  "Cloud Platform": ["AWS", "Google Cloud"],
   "Web Development": ["WordPress", "HTML", "CSS"],
-  "Data Structures & Algorithms": ["Data Structure and Algorithm concepts"],
 };
 
 // Update your experienceData array to include company logos
 const experienceData = [
   {
     title: "Software Developer",
-    company: "Tech Company Name",
+    company: "CytoCybernetics",
     period: "2022 - Present",
-    logo: "/assets/logos/company1.png", // Add logo paths here
+    logo: "src/assets/logos/cyto.jpg", // Add logo paths here
     description:
       "Developed and maintained web applications using React. Implemented responsive designs and optimized application performance.",
     detailedDescription:
@@ -174,7 +189,7 @@ const experienceData = [
     title: "Frontend Developer",
     company: "Previous Company",
     period: "2020 - 2022",
-    logo: "/assets/logos/company2.png",
+    logo: "src/assets/logos/R.png",
     description:
       "Created user interfaces with HTML, CSS, and JavaScript. Worked in an agile team to deliver high-quality products.",
     detailedDescription:
@@ -404,38 +419,36 @@ const AboutSection = () => {
                       sx={{ display: "flex", alignItems: "center", mb: 1.5 }}
                     >
                       {exp.logo ? (
-                        <Box
-                          component="img"
+                        <Avatar
                           src={exp.logo}
                           alt={`${exp.company} logo`}
                           sx={{
                             width: 40,
                             height: 40,
-                            borderRadius: "50%",
-                            objectFit: "cover",
-                            border: "1px solid rgba(0, 255, 255, 0.3)",
                             mr: 2,
+                            // border: "1px solid rgba(0, 255, 255, 0.3)",
                             backgroundColor: "rgba(255, 255, 255, 0.05)",
+                            "& .MuiAvatar-img": {
+                              objectFit: "contain", // This will prevent cropping
+                              padding: "6px", // Add some padding inside the avatar
+                            },
                           }}
+                          variant="rounded" // Rounded corners look more professional for logos
                         />
                       ) : (
-                        <Box
+                        <Avatar
                           sx={{
                             width: 40,
                             height: 40,
-                            borderRadius: "50%",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
+                            mr: 2,
                             backgroundColor: "rgba(0, 255, 255, 0.1)",
                             border: "1px solid rgba(0, 255, 255, 0.3)",
-                            mr: 2,
                           }}
                         >
                           <BusinessIcon
                             sx={{ color: "#00ffff", fontSize: "1.2rem" }}
                           />
-                        </Box>
+                        </Avatar>
                       )}
                       <Typography
                         variant="h6"
@@ -529,19 +542,21 @@ const AboutSection = () => {
                       sx={{ display: "flex", alignItems: "center", mb: 1.5 }}
                     >
                       {edu.logo ? (
-                        <Box
-                          component="img"
+                        <Avatar
                           src={edu.logo}
                           alt={`${edu.institution} logo`}
                           sx={{
                             width: 40,
                             height: 40,
-                            borderRadius: "50%",
-                            objectFit: "cover",
-                            border: "1px solid rgba(0, 255, 255, 0.3)",
                             mr: 2,
+                            // border: "1px solid rgba(0, 255, 255, 0.3)",
                             backgroundColor: "rgba(255, 255, 255, 0.05)",
+                            "& .MuiAvatar-img": {
+                              objectFit: "contain", // This will prevent cropping
+                              padding: "4px", // Add some padding inside the avatar
+                            },
                           }}
+                          variant="rounded"
                         />
                       ) : (
                         <Box
@@ -939,6 +954,49 @@ const AboutSection = () => {
                         sx={{ color: "rgba(255,255,255,0.7)" }}
                       >
                         {selectedExperience.period}
+                      </Typography>
+                    </Box>
+
+                    {/* Add this after the company name in the modal */}
+                    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+                      {selectedExperience.logo ? (
+                        <Avatar
+                          src={selectedExperience.logo}
+                          alt={`${selectedExperience.company} logo`}
+                          sx={{
+                            width: 60,
+                            height: 60,
+                            mr: 2,
+                            border: "1px solid rgba(0, 255, 255, 0.3)",
+                            backgroundColor: "rgba(255, 255, 255, 0.05)",
+                            "& .MuiAvatar-img": {
+                              objectFit: "contain", // This will prevent cropping
+                              padding: "6px", // Add some padding inside the avatar
+                            },
+                          }}
+                          variant="rounded" // Rounded corners look more professional for logos
+                        />
+                      ) : (
+                        <Avatar
+                          sx={{
+                            width: 60,
+                            height: 60,
+                            mr: 2,
+                            backgroundColor: "rgba(0, 255, 255, 0.1)",
+                            border: "1px solid rgba(0, 255, 255, 0.3)",
+                          }}
+                          variant="rounded"
+                        >
+                          <BusinessIcon
+                            sx={{ color: "#00ffff", fontSize: "2rem" }}
+                          />
+                        </Avatar>
+                      )}
+                      <Typography
+                        variant="h5"
+                        sx={{ color: "rgba(255,255,255,0.9)" }}
+                      >
+                        {selectedExperience.company}
                       </Typography>
                     </Box>
 
