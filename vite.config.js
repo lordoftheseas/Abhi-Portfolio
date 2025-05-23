@@ -1,16 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
+// https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react({
-      // Add any specific React plugin options here
-      include: "**/*.{jsx,tsx}",
-    }),
-  ],
   build: {
-    chunkSizeWarningLimit: 1600,
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -23,14 +16,6 @@ export default defineConfig({
           }
         },
       },
-    },
-  },
-  resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx"], // Add this to handle JSX files properly
-  },
-  server: {
-    headers: {
-      "Content-Type": "application/javascript",
     },
   },
 });
