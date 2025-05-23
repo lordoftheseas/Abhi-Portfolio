@@ -1,0 +1,14 @@
+{
+  "routes": [
+    {
+      "src": "/(.*)\\.jsx$",
+      "headers": { "content-type": "application/javascript" },
+      "dest": "/$1.jsx"
+    },
+    {
+      "src": "/(.*)\\.js$",
+      "headers": { "content-type": "application/javascript" },
+      "dest": "/$1.js"
+    }
+  ]
+}
