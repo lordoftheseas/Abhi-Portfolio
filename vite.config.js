@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   build: {
-    chunkSizeWarningLimit: 1600, // Increase from the default value (usually 500)
+    chunkSizeWarningLimit: 1600,
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -18,6 +18,14 @@ export default defineConfig({
           }
         },
       },
+    },
+  },
+  resolve: {
+    extensions: [".js", ".jsx", ".ts", ".tsx"], // Add this to handle JSX files properly
+  },
+  server: {
+    headers: {
+      "Content-Type": "application/javascript",
     },
   },
 });
